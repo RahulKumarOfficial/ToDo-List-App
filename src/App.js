@@ -9,17 +9,23 @@ class App extends Component {
     this.AddElement = this.AddElement.bind(this);
   }
 
-  AddElement() {
+  AddElement(e) {
     console.log("Button add is clicked");
     var newItem = {
       text: this.inputElement.value,
       key: Date.now
     };
+    
     let {text} = newItem;
     console.log(text);
+    console.log(this.state.items);
+    this.setState(prevState =>{
+        return{ items:prevState.items.concat(newItem)};
+       
+    })
     this.inputElement.value="";
-    
-    
+   
+    e.preventDefault();
   }
   render() {
     return (
@@ -33,6 +39,7 @@ class App extends Component {
           <button type="submit" onClick={this.AddElement}>
             Add To List
           </button>
+        
         </div>
       </div>
     );
