@@ -11,13 +11,14 @@ class App extends Component {
     this.deleteItem = this.deleteItem.bind(this);
   }
 
-  deleteItem(key){
-    var filteredItems = this.state.items.filter(function(item){
-      return (item.key!==key)
-    });
-    this.setState({
-        items:filteredItems
-    });
+  deleteItem(){
+    console.log("delete is cliked");
+    // var filteredItems = this.state.items.filter(function(item){
+    //   return (item.key!==key)
+    // });
+    // this.setState({
+    //     items:filteredItems
+    // });
 }
   AddElement(e) {
     if (this.inputElement !== "") {
