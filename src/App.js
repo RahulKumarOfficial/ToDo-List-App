@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import TodoItems from "./TodoItems";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -7,9 +7,10 @@ class App extends Component {
       items: []
     };
     this.AddElement = this.AddElement.bind(this);
+    this.deleteItem = this.deleteItem.bind(this);
   }
 
-  AddElement() {
+  AddElement(e) {
     console.log("Button add is clicked");
     var newItem = {
       text: this.inputElement.value,
@@ -18,9 +19,24 @@ class App extends Component {
     let {text} = newItem;
     console.log(text);
     this.inputElement.value="";
-    
-    
+    this.setState(prevState =>{
+
+      return{
+        items:prevState.items.concat(newItem)
+      };
+    });
+    console.log(this.state.items);
+    this.inputElement.value="";
+    e.preventDefault();
   }
+  deleteItem(key){
+    var filteredItems = this.state.items.filter(function(item){
+      return (item.key!==key)
+    });
+    this.setState({
+        items:filteredItems
+    });
+}
   render() {
     return (
       <div className="contains">
@@ -33,6 +49,8 @@ class App extends Component {
           <button type="submit" onClick={this.AddElement}>
             Add To List
           </button>
+         <TodoItems entries = {this.state.items}
+         delete={this.deleteItem}/>
         </div>
       </div>
     );
