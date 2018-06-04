@@ -29,9 +29,9 @@ class App extends Component {
     this.inputElement.value="";
     e.preventDefault();
   }
-  deleteItem(key){
+  deleteItem(text){
     var filteredItems = this.state.items.filter(function(item){
-      return (item.key!==key)
+      return (item.text!==text)
     });
     this.setState({
         items:filteredItems
