@@ -1,8 +1,21 @@
 .contains{
-    background-color: chartreuse;
+    background-color: aqua ;
     height: auto;
     width: auto;
 }
+<<<<<<< HEAD
 ul{
     list-style: none;
 }
+=======
+.formInput{
+    font-family: cursive;
+    text-align: center;
+}
+.formOne{
+    text-align: center;
+    text-decoration: aqua;
+    height: 500px;
+    width:auto;
+}
+>>>>>>> rahul
