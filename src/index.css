@@ -1,5 +1,15 @@
 .contains{
-    background-color: chartreuse;
+    background-color: aqua ;
     height: auto;
     width: auto;
+}
+.formInput{
+    font-family: cursive;
+    text-align: center;
+}
+.formOne{
+    text-align: center;
+    text-decoration: aqua;
+    height: 500px;
+    width:auto;
 }

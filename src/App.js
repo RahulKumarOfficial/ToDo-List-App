@@ -41,16 +41,16 @@ class App extends Component {
     return (
       <div className="contains">
         <div className="formInput">
-          <input
+        <input
             type="text"
             placeholder="Hey! Type something to note"
             ref={a => (this.inputElement = a)}
-          />
-          <button type="submit" onClick={this.AddElement}>
+          className="form-control"/>
+          <button type="submit" onClick={this.AddElement} className="form-control" width="48" height="48">
             Add To List
           </button>
          <TodoItems entries = {this.state.items}
-         delete={this.deleteItem}/>
+         delete={this.deleteItem}/>         
         </div>
       </div>
     );
